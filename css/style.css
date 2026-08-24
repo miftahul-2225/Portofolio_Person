@@ -13,4 +13,22 @@
     --bg-header: rgba(244, 247, 254, 0.85);
     --bg-tertiary: #eef2fc;
     --bg-input: #f8fafc;
+
+    --text-main: #0f172a;
+    --text-sub: #334155;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --border-card: rgba(226, 232, 240, 0.8);
+
+    --hero-title-gradient: linear-gradient(135deg, #1e293b 0%, #2273ff 60%, #7000ff 100%);
+    --gradient-btn: linear-gradient(135deg, #2273ff 0%, #1a56db 100%);
+
+    --shadow-sm: 0 4px 20px -2px rgba(34, 115, 255, 0.06);
+    --shadow-md: 0 10px 30px -5px rgba(34, 115, 255, 0.1);
+    --shadow-glow: 0 0 25px rgba(34, 115, 255, 0.25);
+
+    --timeline-line: #cbd5e1;
+    --terminal-bg: #0f172a;
+    --terminal-header: #1e293b;
+    --terminal-text: #f8fafc;
 }
