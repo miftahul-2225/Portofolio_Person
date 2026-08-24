@@ -146,6 +146,30 @@
         </div>
     </section>
 
+    <!-- TIMELINE / ABOUT SECTION (Image 2 Style) -->
+    <section class="timeline-section" id="tentang">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag"><i class="fas fa-history"></i> Perjalanan Saya</span>
+                <h2 class="section-title">Tentang & Pengalaman</h2>
+                <p class="section-subtitle">Langkah demi langkah dalam perjalanan saya sebagai software engineer modern.
+                </p>
+            </div>
 
+            <!-- Timeline Category Filter (Image 2 Inspired) -->
+            <div class="timeline-filter-wrapper">
+                <button class="filter-btn active" onclick="filterTimeline('all', this)">Semua</button>
+                <button class="filter-btn" onclick="filterTimeline('education', this)">Pendidikan</button>
+                <button class="filter-btn" onclick="filterTimeline('programming', this)">Programming</button>
+                <button class="filter-btn" onclick="filterTimeline('career', this)">Karier</button>
+            </div>
+
+            <!-- Dynamic Timeline Items Wrapper -->
+            <div class="timeline-container d-flex flex-column" id="timeline-items-wrapper">
+                <!-- Items populated dynamically by js/main.js -->
+            </div>
+        </div>
+    </section>
+    
 </body>
 </html>
