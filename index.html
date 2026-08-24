@@ -187,5 +187,27 @@
         </div>
     </section>
     
+
+    <!-- PROJECTS SHOWCASE SECTION -->
+    <section class="projects-section" id="proyek">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag"><i class="fas fa-laptop-code"></i> Portfolio</span>
+                <h2 class="section-title">Proyek Pilihan</h2>
+                <p class="section-subtitle">Beberapa karya dan aplikasi web yang telah berhasil saya bangun.</p>
+            </div>
+
+            <div class="timeline-filter-wrapper projects-filter mb-4">
+                <button class="filter-btn active" onclick="filterProjects('all', this)">Semua</button>
+                <button class="filter-btn" onclick="filterProjects('fullstack', this)">Fullstack</button>
+                <button class="filter-btn" onclick="filterProjects('frontend', this)">Frontend</button>
+                <button class="filter-btn" onclick="filterProjects('backend', this)">Backend</button>
+            </div>
+
+            <div class="row g-4" id="projects-container">
+                <!-- Projects populated dynamically -->
+            </div>
+        </div>
+    </section>
 </body>
 </html>
