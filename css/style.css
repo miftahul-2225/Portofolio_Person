@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #2273ff;
+    --primary-rgb: 34, 115, 255;
+    --primary-hover: #005bf0;
+    --secondary: #7000ff;
+    --accent-cyan: #06b6d4;
+
+    --bg-body: #f4f7fe;
+    --bg-card: #ffffff;
+    --bg-card-hover: #ffffff;
+    --bg-header: rgba(244, 247, 254, 0.85);
+    --bg-tertiary: #eef2fc;
+    --bg-input: #f8fafc;
+}
