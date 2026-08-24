@@ -207,3 +207,68 @@ body {
     color: var(--primary);
     background: rgba(var(--primary-rgb), 0.08);
 }
+
+/* Buttons */
+.btn-primary-custom {
+    background: var(--gradient-btn);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    border: none;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+    color: #ffffff;
+}
+
+.btn-outline-custom {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-outline-custom:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(var(--primary-rgb), 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: rotate(30deg) scale(1.05);
+    background: rgba(var(--primary-rgb), 0.2);
+    color: var(--primary);
+}
