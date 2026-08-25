@@ -644,3 +644,64 @@ timeline-section {
     box-shadow: var(--shadow-md);
 }
 
+.card-header-flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.card-icon-box.edu { background: var(--badge-edu-bg); color: var(--badge-edu-text); }
+.card-icon-box.prog { background: var(--badge-prog-bg); color: var(--badge-prog-text); }
+.card-icon-box.career { background: var(--badge-career-bg); color: var(--badge-career-text); }
+
+.card-title-group h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.card-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.card-subtitle.edu { color: var(--badge-edu-text); }
+.card-subtitle.prog { color: var(--badge-prog-text); }
+.card-subtitle.career { color: var(--badge-career-text); }
+
+.card-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.card-badge.edu { background: var(--badge-edu-bg); color: var(--badge-edu-text); }
+.card-badge.prog { background: var(--badge-prog-bg); color: var(--badge-prog-text); }
+.card-badge.career { background: var(--badge-career-bg); color: var(--badge-career-text); }
+
+.timeline-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin: 0;
+}
