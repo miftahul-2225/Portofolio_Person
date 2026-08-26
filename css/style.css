@@ -1050,4 +1050,34 @@ footer {
     .hero-headline {
         font-size: 2.8rem;
     }
+
+    .timeline-container::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-bottom: 35px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        margin-left: 0;
+    }
+    
+    .timeline-node {
+        left: 4px !important;
+        right: auto !important;
+    }
+    
+    .timeline-year {
+        left: 42px !important;
+        right: auto !important;
+        top: 28px !important;
+    }
+    
+    .timeline-card {
+        width: 100%;
+    }
 }
+
