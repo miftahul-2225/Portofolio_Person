@@ -974,3 +974,43 @@ cert-card:hover {
     background: var(--bg-card);
     color: var(--text-main);
 }
+
+/* FLOATING CHAT WIDGET (Image 1 Bottom Right) */
+.floating-chat-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--gradient-btn);
+    color: #ffffff;
+    border: none;
+    box-shadow: var(--shadow-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+floating-chat-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.chat-box-modal {
+    position: fixed;
+    bottom: 92px;
+    right: 28px;
+    width: 330px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    overflow: hidden;
+    display: none;
+    animation: slideUp 0.3s ease forwards;
+}
