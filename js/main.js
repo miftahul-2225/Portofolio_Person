@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactAndChat();
 });
 
+/* ==========================================================================
+   1. Theme Management (Dark Cosmic <-> Light #2273ff)
+   ========================================================================== */
 function initTheme() {
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const themeIcon = document.getElementById('theme-icon');
@@ -62,6 +65,9 @@ function updateThemeIcon(theme) {
     }
 }
 
+/* ==========================================================================
+   2. Particle Canvas Engine (Cosmic Dark vs Light Blue #2273ff)
+   ========================================================================== */
 function initCanvasParticles() {
     const canvas = document.getElementById('particles-canvas');
     if (!canvas) return;
@@ -136,6 +142,9 @@ function initCanvasParticles() {
     };
 }
 
+/* ==========================================================================
+   3. Typing Effect Engine
+   ========================================================================== */
 function initTypingEffect() {
     const typingElement = document.getElementById('typing-text');
     if (!typingElement) return;
@@ -218,4 +227,213 @@ function initTerminal() {
         }
         terminalBody.scrollTop = terminalBody.scrollHeight;
     };
+}
+
+/* ==========================================================================
+   5. Render Timeline (Image 2 Style)
+   ========================================================================== */
+function renderTimeline(filterCategory = 'all') {
+    const timelineContainer = document.getElementById('timeline-items-wrapper');
+    if (!timelineContainer) return;
+
+    const items = PORTFOLIO_DATA.timeline.filter(item => {
+        if (filterCategory === 'all') return true;
+        return item.categoryType === filterCategory;
+    });
+
+    timelineContainer.innerHTML = items.map((item, index) => {
+        return `
+            <div class="timeline-item" data-category="${item.categoryType}">
+                <div class="timeline-node ${item.categoryType}">
+                    <div class="node-inner"></div>
+                </div>
+                <div class="timeline-year">${item.year}</div>
+                <div class="timeline-card">
+                    <div class="card-header-flex">
+                        <div class="card-header-left">
+                            <div class="card-icon-box ${item.categoryType}">
+                                <i class="${item.icon}"></i>
+                            </div>
+                            <div class="card-title-group">
+                                <h4>${item.title}</h4>
+                                <div class="card-subtitle ${item.categoryType}">${item.subtitle}</div>
+                            </div>
+                        </div>
+                        <span class="card-badge ${item.categoryType}">${item.category}</span>
+                    </div>
+                    <p>${item.description}</p>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+window.filterTimeline = (category, btnElement) => {
+    document.querySelectorAll('.timeline-filter-wrapper .filter-btn').forEach(btn => btn.classList.remove('active'));
+    btnElement.classList.add('active');
+    renderTimeline(category);
+};
+
+/* ==========================================================================
+   6. Render Skills
+   ========================================================================== */
+function renderSkills() {
+    const container = document.getElementById('skills-container');
+    if (!container) return;
+
+    container.innerHTML = PORTFOLIO_DATA.skills.map(cat => {
+        return `
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="skill-category-card">
+                    <div class="skill-cat-title">
+                        <i class="${cat.icon}"></i>
+                        <span>${cat.category}</span>
+                    </div>
+                    <div class="skills-list">
+                        ${cat.items.map(skill => `
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">
+                                        <i class="${skill.icon}" style="color: ${skill.color}"></i>
+                                        ${skill.name}
+                                    </span>
+                                    <span class="skill-percent">${skill.level}%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill" data-level="${skill.level}"></div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+/* ==========================================================================
+   7. Render Projects & Certificates
+   ========================================================================== */
+function renderProjects(filter = 'all') {
+    const container = document.getElementById('projects-container');
+    if (!container) return;
+
+    const filtered = PORTFOLIO_DATA.projects.filter(p => filter === 'all' || p.category.toLowerCase() === filter.toLowerCase());
+
+    container.innerHTML = filtered.map(p => `
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="${p.image}" alt="${p.title}" class="project-img">
+                    <div class="project-overlay">
+                        <a href="${p.demoUrl}" target="_blank" class="btn-primary-custom btn-sm">Demo</a>
+                        <a href="${p.githubUrl}" target="_blank" class="btn-outline-custom btn-sm"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4 class="project-title">${p.title}</h4>
+                    <p class="project-desc">${p.description}</p>
+                    <div class="tech-tags">
+                        ${p.tags.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+window.filterProjects = (cat, btn) => {
+    document.querySelectorAll('.projects-filter .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProjects(cat);
+};
+
+function renderCertificates() {
+    const container = document.getElementById('certificates-container');
+    if (!container) return;
+
+    container.innerHTML = PORTFOLIO_DATA.certificates.map(c => `
+        <div class="col-lg-6 mb-4">
+            <div class="cert-card">
+                <div class="cert-icon-box" style="background: rgba(34, 115, 255, 0.1); color: ${c.color}">
+                    <i class="${c.icon}"></i>
+                </div>
+                <div class="cert-info">
+                    <h5>${c.title}</h5>
+                    <div class="cert-issuer">${c.issuer} • ${c.date}</div>
+                </div>
+                <a href="${c.credentialUrl}" target="_blank" class="ms-auto btn-outline-custom btn-sm" title="Lihat Kredensial">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    `).join('');
+}
+
+/* ==========================================================================
+   8. Scroll Observer & Stat Counters
+   ========================================================================== */
+function initScrollObserver() {
+    // Stat Counters
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Animate progress bars
+                document.querySelectorAll('.progress-bar-fill').forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-level') + '%';
+                });
+
+                // Animate stat numbers
+                document.querySelectorAll('.stat-number').forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = target / 30;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            stat.textContent = target + '+';
+                            clearInterval(timer);
+                        } else {
+                            stat.textContent = Math.ceil(current) + '+';
+                        }
+                    }, 40);
+                });
+
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.2 });
+
+    const statsSec = document.getElementById('hero-stats-wrapper');
+    if (statsSec) observer.observe(statsSec);
+}
+
+/* ==========================================================================
+   9. Contact Form & Chat Box Modal
+   ========================================================================== */
+function initContactAndChat() {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda.');
+            contactForm.reset();
+        });
+    }
+
+    const chatBtn = document.getElementById('floating-chat-btn');
+    const chatModal = document.getElementById('chat-box-modal');
+    const closeChat = document.getElementById('close-chat-btn');
+
+    if (chatBtn && chatModal) {
+        chatBtn.addEventListener('click', () => {
+            chatModal.style.display = chatModal.style.display === 'block' ? 'none' : 'block';
+        });
+    }
+
+    if (closeChat && chatModal) {
+        closeChat.addEventListener('click', () => {
+            chatModal.style.display = 'none';
+        });
+    }
 }
