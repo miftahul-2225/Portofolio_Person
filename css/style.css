@@ -911,3 +911,15 @@ cert-card:hover {
     font-size: 1.5rem;
     flex-shrink: 0;
 }
+
+.cert-info h5 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.cert-issuer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
