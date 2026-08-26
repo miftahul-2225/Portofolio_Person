@@ -1,32 +1,34 @@
+/* Modern Developer Portfolio Stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
+    /* Light Mode Palette - Inspired by Image 2 with Primary Hex #2273ff */
     --primary: #2273ff;
     --primary-rgb: 34, 115, 255;
     --primary-hover: #005bf0;
     --secondary: #7000ff;
     --accent-cyan: #06b6d4;
-
+    
     --bg-body: #f4f7fe;
     --bg-card: #ffffff;
     --bg-card-hover: #ffffff;
     --bg-header: rgba(244, 247, 254, 0.85);
     --bg-tertiary: #eef2fc;
     --bg-input: #f8fafc;
-
+    
     --text-main: #0f172a;
     --text-sub: #334155;
     --text-muted: #64748b;
     --border-color: #e2e8f0;
     --border-card: rgba(226, 232, 240, 0.8);
-
+    
     --hero-title-gradient: linear-gradient(135deg, #1e293b 0%, #2273ff 60%, #7000ff 100%);
     --gradient-btn: linear-gradient(135deg, #2273ff 0%, #1a56db 100%);
-
+    
     --shadow-sm: 0 4px 20px -2px rgba(34, 115, 255, 0.06);
     --shadow-md: 0 10px 30px -5px rgba(34, 115, 255, 0.1);
     --shadow-glow: 0 0 25px rgba(34, 115, 255, 0.25);
-
+    
     --timeline-line: #cbd5e1;
     --terminal-bg: #0f172a;
     --terminal-header: #1e293b;
@@ -42,32 +44,33 @@
 }
 
 [data-theme="dark"] {
+    /* Dark Mode Palette - Inspired by Image 1 (Cosmic Dark Purple/Cyan Theme) */
     --primary: #9333ea;
     --primary-rgb: 147, 51, 234;
     --primary-hover: #7e22ce;
     --secondary: #2273ff;
     --accent-cyan: #06b6d4;
-
+    
     --bg-body: #0a0817;
     --bg-card: rgba(20, 16, 42, 0.65);
     --bg-card-hover: rgba(28, 22, 58, 0.8);
     --bg-header: rgba(10, 8, 23, 0.85);
     --bg-tertiary: #14102c;
     --bg-input: #181335;
-
+    
     --text-main: #f8fafc;
     --text-sub: #cbd5e1;
     --text-muted: #94a3b8;
     --border-color: rgba(255, 255, 255, 0.1);
     --border-card: rgba(147, 51, 234, 0.2);
-
+    
     --hero-title-gradient: linear-gradient(135deg, #ffffff 30%, #c084fc 65%, #38bdf8 100%);
     --gradient-btn: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-
+    
     --shadow-sm: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
     --shadow-md: 0 10px 35px -5px rgba(0, 0, 0, 0.6);
     --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.35);
-
+    
     --timeline-line: rgba(255, 255, 255, 0.15);
     --terminal-bg: #0c0919;
     --terminal-header: #151029;
@@ -81,6 +84,7 @@
     --badge-career-text: #c084fc;
 }
 
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -374,7 +378,7 @@ body {
     margin-bottom: 32px;
 }
 
-social-icons-wrapper {
+.social-icons-wrapper {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -509,7 +513,8 @@ social-icons-wrapper {
     font-size: 0.85rem;
 }
 
-timeline-section {
+/* TIMELINE SECTION (Image 2 Style) */
+.timeline-section {
     padding: 90px 0;
     position: relative;
 }
@@ -546,7 +551,6 @@ timeline-section {
     max-width: 900px;
     margin: 0 auto;
 }
-
 
 /* Center Vertical Line */
 .timeline-container::before {
@@ -896,7 +900,7 @@ timeline-section {
     transition: all 0.3s ease;
 }
 
-cert-card:hover {
+.cert-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
 }
@@ -996,7 +1000,7 @@ cert-card:hover {
     transition: all 0.3s ease;
 }
 
-floating-chat-btn:hover {
+.floating-chat-btn:hover {
     transform: scale(1.1) rotate(10deg);
 }
 
@@ -1050,11 +1054,11 @@ footer {
     .hero-headline {
         font-size: 2.8rem;
     }
-
+    
     .timeline-container::before {
         left: 20px;
     }
-
+    
     .timeline-item {
         width: 100%;
         padding-left: 50px;
