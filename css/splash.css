@@ -1,0 +1,269 @@
+/* ==========================================================================
+   DEDICATED SPLASH SCREEN / PRELOADER STYLES
+   ========================================================================== */
+
+body.splash-active {
+    overflow: hidden !important;
+}
+
+#splash-screen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: radial-gradient(circle at 50% 45%, #161130 0%, #0a0817 100%) !important;
+    z-index: 99999999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1;
+    visibility: visible;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s ease;
+}
+
+#splash-screen.splash-fade-out {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+#splash-screen.splash-hidden {
+    display: none !important;
+}
+
+/* Ambient Backdrop Glow Orbs */
+.splash-bg-glow-1 {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.35) 0%, rgba(147, 51, 234, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(40px);
+    pointer-events: none;
+    animation: splashPulseGlow 4s ease-in-out infinite alternate;
+}
+
+.splash-bg-glow-2 {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, rgba(6, 182, 212, 0) 70%);
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    filter: blur(35px);
+    pointer-events: none;
+    animation: splashPulseGlow 3.5s ease-in-out infinite alternate-reverse;
+}
+
+/* Splash Modal Box */
+.splash-card {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(20, 16, 42, 0.75);
+    border: 1px solid rgba(147, 51, 234, 0.25);
+    border-radius: 28px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(147, 51, 234, 0.25);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: splashCardIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Logo Wrapper & Strict Dimension */
+.splash-logo-container {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+}
+
+.splash-ring {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.splash-ring-1 {
+    inset: -6px;
+    border: 2px dashed rgba(147, 51, 234, 0.55);
+    animation: splashRotateRing 12s linear infinite;
+}
+
+.splash-ring-2 {
+    inset: -14px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    animation: splashRotateRingRev 16s linear infinite;
+}
+
+.splash-logo-frame {
+    width: 76px !important;
+    height: 76px !important;
+    max-width: 76px !important;
+    max-height: 76px !important;
+    border-radius: 20px;
+    background: #14102c;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 25px rgba(147, 51, 234, 0.35);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px;
+    box-sizing: border-box !important;
+    animation: splashLogoHover 3s ease-in-out infinite alternate;
+}
+
+.splash-logo-img {
+    width: 48px !important;
+    height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Typography */
+.splash-brand-heading {
+    margin: 0 0 1.5rem 0 !important;
+    text-align: center;
+}
+
+.splash-brand-title {
+    font-size: 1.75rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+    margin: 0 0 0.3rem 0 !important;
+    color: #f8fafc !important;
+    line-height: 1.2 !important;
+}
+
+.splash-brand-title .splash-gradient-text {
+    background: linear-gradient(135deg, #c084fc 0%, #38bdf8 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.splash-brand-sub {
+    font-size: 0.85rem !important;
+    color: #94a3b8 !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+}
+
+/* Progress Section */
+.splash-progress-section {
+    width: 100% !important;
+    margin-bottom: 1.25rem !important;
+}
+
+.splash-bar-track {
+    width: 100% !important;
+    height: 6px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+.splash-bar-fill {
+    height: 100% !important;
+    width: 0% !important;
+    background: linear-gradient(90deg, #9333ea, #06b6d4) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 14px rgba(147, 51, 234, 0.8) !important;
+    transition: width 0.15s ease-out !important;
+}
+
+.splash-status-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: 0.65rem !important;
+    font-size: 0.8rem !important;
+}
+
+.splash-status-label {
+    color: #cbd5e1 !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 80% !important;
+}
+
+.splash-percent-label {
+    color: #c084fc !important;
+    font-family: 'Fira Code', monospace !important;
+    font-weight: 600 !important;
+}
+
+/* Terminal Line Tag */
+.splash-terminal-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 0.35rem 0.9rem !important;
+    background: #14102c !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 100px !important;
+    font-family: 'Fira Code', monospace !important;
+    font-size: 0.75rem !important;
+    color: #94a3b8 !important;
+}
+
+.splash-terminal-pill .pill-arrow {
+    color: #06b6d4 !important;
+    font-weight: bold !important;
+}
+
+.splash-terminal-pill .pill-cmd {
+    color: #cbd5e1 !important;
+}
+
+/* Keyframe Animations */
+@keyframes splashRotateRing {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes splashRotateRingRev {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes splashLogoHover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-4px); }
+}
+
+@keyframes splashPulseGlow {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+
+@keyframes splashCardIn {
+    0% { opacity: 0; transform: translateY(18px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
