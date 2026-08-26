@@ -1081,3 +1081,12 @@ footer {
     }
 }
 
+@media (max-width: 576px) {
+    .hero-headline {
+        font-size: 2.2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
